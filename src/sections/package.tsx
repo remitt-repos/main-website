@@ -7,6 +7,7 @@ import PriceCard from '../components/price-card';
 import ButtonGroup from '../components/button-group';
 import SectionHeader from '../components/section-header';
 import { IoIosCheckmarkCircle, IoIosCloseCircle } from 'react-icons/io';
+import { TSXStylesObject } from "../pages/_app";
 
 const packages = {
   monthly: [
@@ -246,7 +247,7 @@ export default function Package() {
     pricingPlan: monthly,
   });
 
-  const handlePricingPlan = (plan) => {
+  const handlePricingPlan = (plan: any) => {
     if (plan === 'annual') {
       setState({
         ...state,
@@ -291,6 +292,7 @@ export default function Package() {
         <SectionHeader
           slogan="Pricing Plan"
           title="Choose your pricing policy"
+          isWhite={false}
         />
         <Flex sx={styles.buttonGroup}>
           <Box sx={styles.buttonGroupInner}>
@@ -347,7 +349,7 @@ const fadeIn2 = keyframes`
     opacity: 1;
   }
 `;
-const styles = {
+const styles: TSXStylesObject = {
   pricingWrapper: {
     mb: '-40px',
     mt: '-40px',

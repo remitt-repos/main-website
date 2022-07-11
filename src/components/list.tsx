@@ -1,7 +1,7 @@
 import React from 'react';
 import { Flex, Box, IconButton } from 'theme-ui';
 
-export default function List({ items = [], parentStyle, childStyle }) {
+export default function List({ items = [], parentStyle, childStyle }: any) {
   return (
     <Box
       as="ul"
@@ -12,7 +12,7 @@ export default function List({ items = [], parentStyle, childStyle }) {
         ...parentStyle,
       }}
     >
-      {items.map(({ icon, text, isAvailable }, i) => (
+      {items.map(({ icon, text, isAvailable }: any, i: number) => (
         <Flex
           className={isAvailable ? 'open' : 'closed'}
           as="li"

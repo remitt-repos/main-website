@@ -19,6 +19,7 @@ import shapePattern from '../assets/shape-pattern1.png';
 
 import Smart from '../assets/services/smart.svg';
 import Secure from '../assets/services/secure.svg';
+import { TSXStylesObject } from "../pages/_app";
 
 const data = {
   subTitle: 'our services',
@@ -46,15 +47,16 @@ const data = {
 export default function ServiceSection() {
   // modal popup video handler
   const [videoOpen, setVideoOpen] = useState(false);
-  const handleClick = (e) => {
+  const handleClick = (e: any) => {
     e.preventDefault();
     setVideoOpen(true);
   };
   return (
-    <section sx={{ variant: 'section.services' }}>
-      <Container sx={styles.containerBox}>
+    // <section sx={{ variant: 'section.services' }}>
+    <section>
+    <Container sx={styles.containerBox}>
         <Box sx={styles.thumbnail}>
-          <Image src={ServiceThumb} alt="Thumbnail" />
+          {/*<Image src={ServiceThumb} alt="Thumbnail" />*/}
           <Button
             sx={styles.videoBtn}
             onClick={handleClick}
@@ -66,7 +68,7 @@ export default function ServiceSection() {
           </Button>
 
           <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="Shape" />
+            {/*<Image src={shapePattern} alt="Shape" />*/}
           </Box>
         </Box>
         <Box sx={styles.contentBox}>
@@ -78,8 +80,8 @@ export default function ServiceSection() {
                 <Image src={item.imgSrc} alt={item.altText} sx={styles.icon} />
 
                 <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>{item.title}</Heading>
-                  <Text sx={styles.wrapper.subTitle}>{item.text}</Text>
+                  <Heading sx={styles.wrapperTitle}>{item.title}</Heading>
+                  <Text sx={styles.wrapperSubTitle}>{item.text}</Text>
                 </Box>
               </Box>
             ))}
@@ -108,7 +110,7 @@ const playPluse = keyframes`
   }
 `;
 
-const styles = {
+const styles: TSXStylesObject = {
   coreFeature: {
     py: [0, null, null, 2, null, 7],
     position: 'relative',
@@ -214,19 +216,18 @@ const styles = {
     flexDirection: 'column',
     textAlign: 'left',
     mt: '-5px',
-    title: {
-      fontSize: 3,
-      color: 'heading_secondary',
-      lineHeight: 1.4,
-      fontWeight: 700,
-      mb: [2, null, 3, 2, 3],
-    },
-
-    subTitle: {
-      fontSize: [1, null, null, '14px', 1],
-      fontWeight: 400,
-      lineHeight: 1.9,
-    },
+  },
+  wrapperTitle: {
+    fontSize: 3,
+    color: 'heading_secondary',
+    lineHeight: 1.4,
+    fontWeight: 700,
+    mb: [2, null, 3, 2, 3],
+  },
+  wrapperSubTitle: {
+    fontSize: [1, null, null, '14px', 1],
+    fontWeight: 400,
+    lineHeight: 1.9,
   },
   videoWrapper: {
     maxWidth: '100%',
@@ -237,12 +238,12 @@ const styles = {
       display: 'block',
       paddingTop: '56.25%',
     },
-    iframe: {
-      width: '100%',
-      height: '100%',
-      position: 'absolute',
-      top: 0,
-      left: 0,
-    },
+  },
+  videoWrapperIFrame: {
+    width: '100%',
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    left: 0,
   },
 };

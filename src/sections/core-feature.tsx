@@ -5,13 +5,14 @@ import Image from '../components/image';
 
 import FeatureThumb from '../assets/core-feature.png';
 import ShapePattern from '../assets/shape-pattern2.png';
+import { TSXStylesObject } from "../pages/_app";
 
 const data = {
-  subTitle: 'Core features',
-  title: 'Smart Jackpots that you may love this anytime & anywhere',
+  subTitle: 'Core feature',
+  title: '100% transparency on reserves',
   description:
-    'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
-  btnName: 'Get Started',
+    'All Remitts tokens are pegged at 1-to-1 with a matching fiat currency and are backed 100% by Remitt’s reserves. We publish a daily record of the current total assets and reserves.',
+  btnName: 'Transparency report',
   btnURL: '#',
 };
 
@@ -39,7 +40,7 @@ export default function CoreFeature() {
   );
 }
 
-const styles = {
+const styles: TSXStylesObject = {
   containerBox: {
     display: 'flex',
     alignItems: 'center',

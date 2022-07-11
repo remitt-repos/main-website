@@ -2,7 +2,7 @@
 import { jsx, Image } from 'theme-ui';
 import { Link } from './link';
 
-export default function Logo({ src, ...rest }) {
+export default function Logo({ src, ...rest }: any) {
   return (
     <Link
         label={ undefined } path="/"

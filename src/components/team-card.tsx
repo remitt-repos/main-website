@@ -1,31 +1,35 @@
 /** @jsxImportSource theme-ui */
-import { jsx } from 'theme-ui';
 import { Text, Heading, Image, Box, Link } from 'theme-ui';
+import { Component } from "react";
+import { TSXStylesObject } from "../pages/_app";
 
-export default function TeamCard({ src, altText, title, designation, social }) {
-  return (
-    <Box sx={styles.card}>
-      <Image src={src} alt={altText} sx={styles.memberThumb} />
-      <Box sx={styles.infoWrapper}>
-        <Heading className="info__name" sx={styles.infoWrapper.name}>
-          {title}
-        </Heading>
-        <Text className="info__designation" sx={styles.infoWrapper.designation}>
-          {designation}
-        </Text>
+export default class TeamCard extends Component<{ src: any, altText: any, title: any, designation: any, social: any }> {
+  render() {
+    let { src, altText, title, designation, social } = this.props;
+    return (
+      <Box sx={ styles.card }>
+        <Image src={ src } alt={ altText } sx={ styles.memberThumb }/>
+        <Box sx={ styles.infoWrapper }>
+          <Heading className="info__name" sx={ styles.infoWrapperName }>
+            { title }
+          </Heading>
+          <Text className="info__designation" sx={ styles.infoWrapperDesignation }>
+            { designation }
+          </Text>
+        </Box>
+        <Box sx={ styles.socialShare } className="social__share">
+          { social.map((item: any) => (
+            <Link key={ item.id } href={ item.path } className={ item.name }>
+              { item.icon }
+            </Link>
+          )) }
+        </Box>
       </Box>
-      <Box sx={styles.socialShare} className="social__share">
-        {social.map((item) => (
-          <Link key={item.id} href={item.path} className={item.name}>
-            {item.icon}
-          </Link>
-        ))}
-      </Box>
-    </Box>
-  );
+    );
+  }
 }
 
-const styles = {
+const styles: TSXStylesObject = {
   card: {
     display: 'flex',
     alignItems: 'center',
@@ -65,20 +69,20 @@ const styles = {
     width: '100%',
     textAlign: 'center',
     mt: [3, null, 4],
-    name: {
-      fontSize: [1, 2, 3, null, null, 4],
-      fontWeight: 'bold',
-      lineHeight: [1.25, 1.35],
-      transition: 'color 0.25s',
-      mb: 1,
-    },
-    designation: {
-      fontSize: ['14px', null, null, 2],
-      fontWeight: 'body',
-      lineHeight: 'heading',
-      color: 'text',
-      transition: 'color 0.25s',
-    },
+  },
+  infoWrapperName: {
+    fontSize: [1, 2, 3, null, null, 4],
+    fontWeight: 'bold',
+    lineHeight: [1.25, 1.35],
+    transition: 'color 0.25s',
+    mb: 1,
+  },
+  infoWrapperDesignation: {
+    fontSize: ['14px', null, null, 2],
+    fontWeight: 'body',
+    lineHeight: 'heading',
+    color: 'text',
+    transition: 'color 0.25s',
   },
   socialShare: {
     position: ['relative', null, 'absolute'],

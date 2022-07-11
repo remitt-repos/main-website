@@ -3,19 +3,20 @@ import { jsx, Box, Grid, Container, Image, Heading, Text } from 'theme-ui';
 import { Link } from '../link';
 import data from './footer.data';
 import FooterLogo from '../../assets/logo.svg';
+import { TSXStylesObject } from "../../pages/_app";
 
 export default function Footer() {
   return (
-    <footer sx={styles.footer}>
+    <footer sx={widgetStyles.footer}>
       <Container>
-        <Grid sx={styles.widgets}>
+        <Grid sx={widgetStyles.widgets}>
           {data.widgets.map((item) => (
             <Box
               key={`footer-widget--key${item.id}`}
-              sx={styles.widgets.widgetItem}
+              sx={widgetStyles.widgetItem}
             >
               <Image src={item.iconSrc} alt={item.altText} />
-              <Box sx={styles.widgets.infoWrapper}>
+              <Box sx={widgetStyles.infoWrapper}>
                 <Heading as="h3">{item.title}</Heading>
                 <Text as="p">{item.description}</Text>
               </Box>
@@ -23,23 +24,23 @@ export default function Footer() {
           ))}
         </Grid>
         {/* End of footer widgets area */}
-        <Box sx={styles.footer.footerBottomArea}>
+        <Box sx={footerStyles.footerBottomArea}>
           <Link path="/">
             <Image src={FooterLogo.src} alt="Logo" />
           </Link>
-          <Box sx={styles.footer.menus}>
+          <Box sx={footerStyles.menus}>
             <nav>
               {data.menuItem.map(({ path, label }, i) => (
                 <Link
                   path={path}
                   key={i}
                   label={label}
-                  sx={styles.footer.link}
+                  sx={footerStyles.link}
                 />
               ))}
             </nav>
           </Box>
-          <Text sx={styles.footer.copyright}>
+          <Text sx={footerStyles.copyright}>
             Copyright by {new Date().getFullYear()} Remitt Foundation
           </Text>
         </Box>
@@ -48,48 +49,49 @@ export default function Footer() {
   );
 }
 
-const styles = {
-  footer: {
-    footerBottomArea: {
-      borderTop: '1px solid',
-      borderTopColor: 'border_color',
+const footerStyles: TSXStylesObject = {
+  footerBottomArea: {
+    borderTop: '1px solid',
+    borderTopColor: 'border_color',
+    display: 'flex',
+    pt: [7, null, 8],
+    pb: ['40px', null, '100px'],
+    textAlign: 'center',
+    flexDirection: 'column',
+  },
+  menus: {
+    mt: [3, 4],
+    mb: 2,
+    nav: {
       display: 'flex',
-      pt: [7, null, 8],
-      pb: ['40px', null, '100px'],
-      textAlign: 'center',
-      flexDirection: 'column',
-    },
-    menus: {
-      mt: [3, 4],
-      mb: 2,
-      nav: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexWrap: 'wrap',
-      },
-    },
-
-    link: {
-      fontSize: [1, '15px'],
-      color: 'text',
-      fontWeight: '400',
-      mb: 2,
-      cursor: 'pointer',
-      transition: 'all 0.35s',
-      display: 'block',
-      textDecoration: 'none',
-      lineHeight: [1.5, null, 1.8],
-      px: [2, null, 4],
-      ':hover': {
-        color: 'primary',
-      },
-    },
-    copyright: {
-      fontSize: [1, '15px'],
-      width: '100%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
     },
   },
+
+  link: {
+    fontSize: [1, '15px'],
+    color: 'text',
+    fontWeight: '400',
+    mb: 2,
+    cursor: 'pointer',
+    transition: 'all 0.35s',
+    display: 'block',
+    textDecoration: 'none',
+    lineHeight: [1.5, null, 1.8],
+    px: [2, null, 4],
+    ':hover': {
+      color: 'primary',
+    },
+  },
+  copyright: {
+    fontSize: [1, '15px'],
+    width: '100%',
+  },
+}
+
+const widgetStyles: TSXStylesObject = {
   widgets: {
     py: [8, null, 9],
     px: [4, 0, 3, null, 7, 10],
@@ -102,25 +104,25 @@ const styles = {
       'repeat(2,1fr)',
       'repeat(3,1fr)',
     ],
-    widgetItem: {
-      textAlign: 'center',
+  },
+  widgetItem: {
+    textAlign: 'center',
+  },
+  infoWrapper: {
+    mt: [2, 3, null, 2, 4],
+    mb: -1,
+    h3: {
+      fontSize: [3, null, null, 2, 3, 4],
+      color: 'heading_secondary',
+      lineHeight: 1.4,
+      fontWeight: 700,
+      mb: [2, null, null, null, '15px'],
     },
-    infoWrapper: {
-      mt: [2, 3, null, 2, 4],
-      mb: -1,
-      h3: {
-        fontSize: [3, null, null, 2, 3, 4],
-        color: 'heading_secondary',
-        lineHeight: 1.4,
-        fontWeight: 700,
-        mb: [2, null, null, null, '15px'],
-      },
 
-      p: {
-        fontSize: [1, '15px'],
-        fontWeight: 400,
-        lineHeight: 2,
-      },
+    p: {
+      fontSize: [1, '15px'],
+      fontWeight: 400,
+      lineHeight: 2,
     },
   },
 };

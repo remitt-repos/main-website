@@ -6,31 +6,32 @@ import SectionHeader from '../components/section-header';
 import PatternBG from '../assets/patternBG.png';
 import ArrowOdd from '../assets/arrowOdd.svg';
 import ArrowEven from '../assets/arrowEven.svg';
+import { TSXStylesObject } from "../pages/_app";
 
 const data = [
   {
     id: 1,
     title: 'Set disbursement Instructions',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
   },
   {
     id: 2,
     title: 'Assembly retrieves funds from your account',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
   },
   {
     id: 3,
     title: 'Assembly initiates disbursement',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
   },
   {
     id: 4,
     title: 'Customer receives funds payment',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit sed eiusmod tempor.',
   },
 ];
 
@@ -49,8 +50,8 @@ export default function WorkFlow() {
             <Box sx={styles.card} key={item.id}>
               <Box sx={styles.iconBox}>{`0${item.id}`}</Box>
               <Box sx={styles.wrapper}>
-                <Heading sx={styles.wrapper.title}>{item.title}</Heading>
-                <Text sx={styles.wrapper.subTitle}>{item.text}</Text>
+                <Heading sx={styles.wrapperTitle}>{item.title}</Heading>
+                <Text sx={styles.wrapperSubTitle}>{item.text}</Text>
               </Box>
             </Box>
           ))}
@@ -60,7 +61,7 @@ export default function WorkFlow() {
   );
 }
 
-const styles = {
+const styles: TSXStylesObject = {
   workflow: {
     backgroundColor: 'primary',
     backgroundImage: `url(${PatternBG.src})`,
@@ -144,21 +145,20 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     mt: '-5px',
-    title: {
-      fontSize: [3, null, 4, null, null, 5],
-      color: 'white',
-      lineHeight: [1.4, null, null, null, null, 1.55],
-      pr: [0, null, null, null, null, 2],
-      mb: [2, 3],
-    },
-
-    subTitle: {
-      fontSize: 1,
-      fontWeight: 400,
-      lineHeight: [1.85, null, null, 1.9, 2],
-      color: 'white',
-      opacity: 0.75,
-      pr: [0, null, null, null, null, 5],
-    },
+  },
+  wrapperTitle: {
+    fontSize: [3, null, 4, null, null, 5],
+    color: 'white',
+    lineHeight: [1.4, null, null, null, null, 1.55],
+    pr: [0, null, null, null, null, 2],
+    mb: [2, 3],
+  },
+  wrapperSubTitle: {
+    fontSize: 1,
+    fontWeight: 400,
+    lineHeight: [1.85, null, null, 1.9, 2],
+    color: 'white',
+    opacity: 0.75,
+    pr: [0, null, null, null, null, 5],
   },
 };

@@ -12,6 +12,7 @@ import { InferGetStaticPropsType } from "next";
 import { getStaticProps } from "../pages";
 import Link from "next/link";
 import React from "react";
+import { TSXStylesObject } from "../pages/_app";
 
 const data = [
   {
@@ -98,7 +99,7 @@ export default function BlogSection({ posts }: InferGetStaticPropsType<typeof ge
             slidesToSlide={1}
           >
             {/* Render each post with a link to the content page */}
-            {posts.map(post => (
+            {posts.map((post: any) => (
               <PostCard
               key={post.id}
               src={post.image}
@@ -116,7 +117,7 @@ export default function BlogSection({ posts }: InferGetStaticPropsType<typeof ge
   );
 }
 
-const styles = {
+const styles: TSXStylesObject = {
   carouselWrapper: {
     '.carousel-container': {
       mx: -3,

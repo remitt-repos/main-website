@@ -7,6 +7,7 @@ import Performance from '../assets/key-feature/performance.svg';
 import Partnership from '../assets/key-feature/partnership.svg';
 import Subscription from '../assets/key-feature/subscription.svg';
 import Support from '../assets/key-feature/support.svg';
+import { TSXStylesObject } from "../pages/_app";
 
 const data = [
   {
@@ -15,7 +16,7 @@ const data = [
     altText: 'Fast Performance',
     title: 'Fast Performance',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Based on Tron network, transactions take up to 2 minutes',
   },
   {
     id: 2,
@@ -23,15 +24,15 @@ const data = [
     altText: 'Partnership deal',
     title: 'Partnership deal',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Always looking for new partners to expand Remitt network',
   },
   {
     id: 3,
     imgSrc: Subscription.src,
-    altText: 'Pro Subscription',
-    title: 'Pro Subscription',
+    altText: 'Attractive rates',
+    title: 'Attractive rates',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'We offer best conversion rates on the market',
   },
   {
     id: 4,
@@ -39,7 +40,7 @@ const data = [
     altText: 'Customer Support',
     title: 'Customer Support',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Our customer support is always there to assist you',
   },
 ];
 
@@ -48,8 +49,8 @@ export default function KeyFeature() {
     <section sx={{ variant: 'section.keyFeature' }} id="feature">
       <Container>
         <SectionHeader
-            slogan="Whats the function"
-            title="Meet the feature of product" isWhite={ false }
+            slogan="Key features"
+            title="Meet the features of product" isWhite={ false }
         />
         <Grid sx={styles.grid}>
           {data.map((item) => (
@@ -67,7 +68,7 @@ export default function KeyFeature() {
   );
 }
 
-const styles = {
+const styles: TSXStylesObject = {
   grid: {
     width: ['100%', '80%', '100%'],
     mx: 'auto',

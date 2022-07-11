@@ -3,6 +3,9 @@ import type { AppProps } from 'next/app';
 import { initGA, logPageView } from '../analytics';
 import { useEffect } from "react";
 import Router from "next/router";
+import { ThemeUIStyleObject } from "@theme-ui/css";
+
+export type TSXStylesObject = { [index: string]: ThemeUIStyleObject };
 
 function RemittApp({ Component, pageProps }: AppProps) {
   useEffect(() => {

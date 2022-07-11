@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
 import { jsx, Image, Box, Heading, Text, Flex, Link } from 'theme-ui';
+import { TSXStylesObject } from "../pages/_app";
 
 export default function PostCard({
   src,
@@ -8,7 +9,7 @@ export default function PostCard({
   title,
   authorName,
   date,
-}) {
+}: any) {
   return (
     <Box sx={styles.card}>
       <Box sx={styles.thumbnail}>
@@ -23,15 +24,15 @@ export default function PostCard({
         </Heading>
 
         <Flex sx={styles.postFooter}>
-          <Text sx={styles.postFooter.name}>{authorName}</Text>
-          <Text sx={styles.postFooter.date}>{date}</Text>
+          <Text sx={styles.postFooterName}>{authorName}</Text>
+          <Text sx={styles.postFooterDate}>{date}</Text>
         </Flex>
       </Flex>
     </Box>
   );
 }
 
-const styles = {
+const styles: TSXStylesObject = {
   card: {
     backgroundColor: 'white',
     boxShadow: '0px 4px 10px rgba(38,78,118,0.12)',
@@ -68,16 +69,16 @@ const styles = {
     width: '100%',
     justifyContent: 'space-between',
     alignItem: 'center',
-    name: {
-      fontSize: ['14px', null, 2],
-      fontWeight: 500,
-      color: 'primary',
-      lineHeight: 1.4,
-    },
-    date: {
-      fontSize: ['14px', null, 2],
-      fontWeight: 400,
-      lineHeight: 1.5,
-    },
+  },
+  postFooterName: {
+    fontSize: ['14px', null, 2],
+    fontWeight: 500,
+    color: 'primary',
+    lineHeight: 1.4,
+  },
+  postFooterDate: {
+    fontSize: ['14px', null, 2],
+    fontWeight: 400,
+    lineHeight: 1.5,
   },
 };

@@ -1,6 +1,7 @@
 import { Box, Card, Text, Heading, Button } from 'theme-ui';
 import React from 'react';
 import List from './list';
+import { TSXStylesObject } from "../pages/_app";
 
 export default function PriceCard({
   data: {
@@ -12,7 +13,7 @@ export default function PriceCard({
     anotherOption,
     points,
   },
-}) {
+}: any) {
   return (
     <Card
       className={header ? 'package__card active' : 'package__card'}
@@ -50,7 +51,7 @@ export default function PriceCard({
   );
 }
 
-const styles = {
+const styles: TSXStylesObject = {
   pricingBox: {
     borderRadius: 20,
     position: 'relative',

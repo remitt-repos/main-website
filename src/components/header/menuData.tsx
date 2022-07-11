@@ -1,18 +1,18 @@
 export const menuData = [
-  {
-    path: 'home',
-    label: 'Home',
-  },
-  {
-    path: 'feature',
-    label: 'Features',
-  },
-  {
-    path: 'pricing',
-    label: 'Pricing',
-  },
-  {
-    path: 'team',
-    label: 'Team',
-  },
+  // {
+  //   path: 'home',
+  //   label: 'Home',
+  // },
+  // {
+  //   path: 'feature',
+  //   label: 'Features',
+  // },
+  // {
+  //   path: 'pricing',
+  //   label: 'Pricing',
+  // },
+  // {
+  //   path: 'team',
+  //   label: 'Team',
+  // },
 ];

@@ -38,14 +38,14 @@ export default function Home({ posts }: InferGetStaticPropsType<typeof getStatic
             <Banner />
             <KeyFeature />
             {/*<ServiceSection />*/}
-            <Feature />
+            {/*<Feature />*/}
             <CoreFeature />
             <WorkFlow />
             {/*<Package />*/}
-            <TeamSection />
+            {/*<TeamSection />*/}
             {/*<TestimonialCard />*/}
             {/*<BlogSection posts={posts} />*/}
-            <Subscribe />
+            {/*<Subscribe />*/}
           </Layout>
         </StickyProvider>
       </ThemeProvider>

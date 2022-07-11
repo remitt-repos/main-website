@@ -11,6 +11,7 @@ import {
   FaDribbble,
 } from 'react-icons/fa';
 import { menuData } from './menuData';
+import { TSXStylesObject } from "../../pages/_app";
 
 const social = [
   {
@@ -32,6 +33,7 @@ const social = [
 ];
 
 const MobileDrawer = () => {
+  // @ts-ignore
   const { state, dispatch } = useContext(DrawerContext);
 
   // Toggle drawer
@@ -73,7 +75,7 @@ const MobileDrawer = () => {
           <Box sx={styles.menuFooter}>
             <Box sx={styles.social}>
               {social.map(({ path, icon }, i) => (
-                <Box as="span" key={i} sx={styles.social.icon}>
+                <Box as="span" key={i} sx={styles.socialIcon}>
                   <Link to={path}>{icon}</Link>
                 </Box>
               ))}
@@ -84,7 +86,7 @@ const MobileDrawer = () => {
   );
 };
 
-const styles = {
+const styles: TSXStylesObject = {
   handler: {
     display: 'flex',
     alignItems: 'center',
@@ -158,22 +160,22 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+  },
 
-    icon: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'text',
-      fontSize: 14,
-      mr: '15px',
-      transition: 'all 0.25s',
-      cursor: 'pointer',
-      ':last-child': {
-        mr: '0',
-      },
-      '&:hover': {
-        color: 'secondary',
-      },
+  socialIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'text',
+    fontSize: 14,
+    mr: '15px',
+    transition: 'all 0.25s',
+    cursor: 'pointer',
+    ':last-child': {
+      mr: '0',
+    },
+    '&:hover': {
+      color: 'secondary',
     },
   },
 

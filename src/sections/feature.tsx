@@ -49,7 +49,7 @@ export default function Feature() {
       <Container>
         <SectionHeader
             slogan="Quality features"
-            title="Amazing useful features" isWhite={ undefined }        />
+            title="Amazing useful features" isWhite={ false } />
 
         <Grid sx={styles.grid}>
           {data.map((item) => (

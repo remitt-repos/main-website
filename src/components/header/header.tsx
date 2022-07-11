@@ -8,6 +8,7 @@ import { DrawerProvider } from '../../contexts/drawer/drawer.provider';
 import MobileDrawer from './mobile-drawer';
 import { menuData } from './menuData';
 import { Component } from "react";
+import { TSXStylesObject } from "../../pages/_app";
 
 export default class Header extends Component<{ className?: string }> {
   render() {
@@ -39,7 +40,7 @@ export default class Header extends Component<{ className?: string }> {
                   variant="secondary"
                   aria-label="Get Started"
               >
-                Get Started
+                Whitepaper
               </Button>
 
               <MobileDrawer/>
@@ -63,7 +64,7 @@ const positionAnim = keyframes`
   }
 `;
 
-const styles = {
+const styles: TSXStylesObject = {
   header: {
     zIndex: 1000,
     color: 'text',

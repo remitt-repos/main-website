@@ -15,7 +15,7 @@ const Drawer = ({
   drawerStyle,
   closeBtnStyle,
   ...props
-}) => {
+}: any) => {
   return (
     <Fragment>
       <RcDrawer
