@@ -13,6 +13,11 @@ import { TSXStylesObject } from "../../pages/_app";
 export default class Header extends Component<{ className?: string }> {
   render() {
     let { className } = this.props;
+
+    const openInNewTab = (url: string) => {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    };
+
     return (
         <DrawerProvider>
           <header sx={ styles.header } className={ className } id="header">
@@ -39,6 +44,7 @@ export default class Header extends Component<{ className?: string }> {
                   className="donate__btn"
                   variant="secondary"
                   aria-label="Get Started"
+                  onClick={() => openInNewTab('https://docs.google.com/document/d/11g_dLoufzWAH0lS9YckOYNZjOREw6mxZhZISrvO6hMg')}
               >
                 Whitepaper
               </Button>

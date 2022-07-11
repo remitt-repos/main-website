@@ -9,20 +9,20 @@ export default function Footer() {
   return (
     <footer sx={widgetStyles.footer}>
       <Container>
-        <Grid sx={widgetStyles.widgets}>
-          {data.widgets.map((item) => (
-            <Box
-              key={`footer-widget--key${item.id}`}
-              sx={widgetStyles.widgetItem}
-            >
-              <Image src={item.iconSrc} alt={item.altText} />
-              <Box sx={widgetStyles.infoWrapper}>
-                <Heading as="h3">{item.title}</Heading>
-                <Text as="p">{item.description}</Text>
-              </Box>
-            </Box>
-          ))}
-        </Grid>
+        {/*<Grid sx={widgetStyles.widgets}>*/}
+        {/*  {data.widgets.map((item) => (*/}
+        {/*    <Box*/}
+        {/*      key={`footer-widget--key${item.id}`}*/}
+        {/*      sx={widgetStyles.widgetItem}*/}
+        {/*    >*/}
+        {/*      <Image src={item.iconSrc} alt={item.altText} />*/}
+        {/*      <Box sx={widgetStyles.infoWrapper}>*/}
+        {/*        <Heading as="h3">{item.title}</Heading>*/}
+        {/*        <Text as="p">{item.description}</Text>*/}
+        {/*      </Box>*/}
+        {/*    </Box>*/}
+        {/*  ))}*/}
+        {/*</Grid>*/}
         {/* End of footer widgets area */}
         <Box sx={footerStyles.footerBottomArea}>
           <Link path="/">

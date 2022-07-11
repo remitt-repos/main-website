@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  main-website:
+    build: .
+    ports:
+      - ${WEB_PORT}:3000/tcp

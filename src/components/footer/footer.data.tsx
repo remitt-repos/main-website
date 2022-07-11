@@ -35,20 +35,20 @@ export default {
       label: 'Home',
     },
     {
-      path: '/',
-      label: 'Adversite',
+      path: 'https://t.me/remitt_en',
+      label: 'Telegram',
     },
     {
-      path: '/',
-      label: 'Supports',
+      path: 'https://www.facebook.com/Remitt-104461518999781',
+      label: 'Facebook',
     },
     {
-      path: '/',
-      label: 'Marketing',
+      path: 'https://twitter.com/remitt_bot',
+      label: 'Twitter',
     },
     {
-      path: '/',
-      label: 'Contact',
+      path: 'https://github.com/remitt-repos',
+      label: 'Github',
     },
   ],
 };
