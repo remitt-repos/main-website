@@ -16,7 +16,7 @@ export function Banner() {
             Stablecoins with 100% reserve
           </Heading>
           <Text as="p" variant="heroSecondary">
-            Fully-collaterized stablecoins with AI-powered P2P exchange-bot that provides additional comfort in buying nad selling stablecoins to cash
+            Fully-collaterized stablecoins with AI-powered P2P exchange-bot that provides additional comfort in buying and selling stablecoins to cash
           </Text>
           <Button variant="primary">Explore</Button>
         </Box>
